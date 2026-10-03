@@ -32,3 +32,5 @@ apps/web/public/images/optimized/
 # Logs
 *.log
 npm-debug.log*
+
+.vercel
