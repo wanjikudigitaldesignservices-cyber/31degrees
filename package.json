@@ -1,0 +1,25 @@
+{
+  "name": "31degrees",
+  "version": "1.0.0",
+  "private": true,
+  "description": "31 DEGREES — Premium petrol station franchise network (Kenya)",
+  "workspaces": [
+    "apps/web",
+    "supabase/functions"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=apps/web",
+    "build": "npm run verify-images && npm run build --workspace=apps/web",
+    "lint": "npm run lint --workspace=apps/web",
+    "typecheck": "npm run typecheck --workspace=apps/web",
+    "test": "npm run test --workspace=apps/web",
+    "test:e2e": "npm run test:e2e --workspace=apps/web",
+    "verify-images": "npx tsx scripts/verify-images.ts",
+    "image-pipeline": "npx tsx scripts/image-pipeline.ts",
+    "rls-test": "npx tsx scripts/rls-matrix-test.ts",
+    "bootstrap-admin": "npx tsx scripts/bootstrap-admin.ts"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

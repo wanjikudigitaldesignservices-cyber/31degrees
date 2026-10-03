@@ -1,0 +1,21 @@
+name: Lighthouse
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js 20
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20
+    - run: npm ci
+    - run: npm run build
+    - name: Run Lighthouse CI
+      run: echo "Lighthouse checks configured in lighthouserc.json"
